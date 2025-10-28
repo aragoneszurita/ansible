@@ -3,7 +3,9 @@
   hosts: SERVER_LOCAL
   gather_facts: false
   become: yes
-
+  
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks: # tareas dentro del play
   - name: Visualizar salida
     ansible.builtin.debug:
