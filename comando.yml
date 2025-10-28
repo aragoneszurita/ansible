@@ -1,6 +1,6 @@
 ---
 - name: Ejecuciones comando - command - 
-  hosts: 192.168.15.100
+  hosts: SERVIDORES
   gather_facts: false
   become: yes
 
