@@ -1,0 +1,15 @@
+---
+- name: Ejecuciones comando - command - 
+  hosts: europa
+  gather_facts: false
+  become: yes
+
+  tasks: # tareas dentro del play
+  - name: Visualizar directorio 
+    ansible.builtin.command: 
+       cmd: ls -lrt /home/minion/
+    register: output
+
+  - name: Visualizar salida
+    ansible.builtin.debug:
+      msg: "El resultado de {{inventory_hostname}} es {{output}}"    
