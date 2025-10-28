@@ -1,0 +1,26 @@
+---
+- name: Informacion de fecha y ultimo reinicio
+  hosts: minions 
+  gather_facts: false
+
+  tasks:
+    # Tarea 1: Hora del sistema
+    - name: 1. Obtener la hora actual del sistema
+      ansible.builtin.command: date
+      register: hora_actual_resultado
+      # Usamos 'register' para guardar la salida del comando en la variable 'hora_actual_resultado'
+
+    - name: Mostrar la hora actual
+      ansible.builtin.debug:
+        msg: "La hora actual del servidor {{ inventory_hostname }} es: {{ hora_actual_resultado.stdout }}"
+        # La salida del comando se encuentra en hora_actual_resultado.stdout o stdout_lines
+
+    # Tarea 2: Último reinicio
+    - name: 2. Obtener el momento del ultimo reinicio (boot time)
+      ansible.builtin.command: who -b
+      register: ultimo_reinicio_resultado
+      # who -b generalmente muestra la fecha y hora de la última vez que se arrancó (boot time)
+    
+    - name: Mostrar fecha de ultimo reinicio
+      ansible.builtin.debug:
+        msg: "El servidor {{ inventory_hostname }} se reinicio por ultima vez: {{ ultimo_reinicio_resultado.stdout_lines | first }}"%                                                       
