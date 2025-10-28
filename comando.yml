@@ -1,6 +1,6 @@
 ---
 - name: Ejecuciones comando - command - 
-  hosts: all
+  hosts: APP_SERVERS
   gather_facts: false
   become: yes
 
