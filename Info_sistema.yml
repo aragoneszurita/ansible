@@ -1,6 +1,6 @@
 ---
 - name: Informacion de fecha y ultimo reinicio
-  hosts: minions 
+  hosts: localhost 
   gather_facts: false
 
   tasks:
