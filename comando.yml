@@ -7,7 +7,7 @@
   tasks: # tareas dentro del play
   - name: Visualizar directorio 
     ansible.builtin.command: 
-       cmd: ls -lrt /home/alumno/
+       cmd: ls -lrt 
     register: output
 
   - name: Visualizar salida
