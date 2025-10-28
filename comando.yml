@@ -8,5 +8,5 @@
     ansible_python_interpreter: /usr/bin/python3
   tasks: # tareas dentro del play
   - name: Visualizar salida
-    ansible.builtin.debug:
-      msg: "El resultado de {{inventory_hostname}} es {{output}}"    
+      shell: echo Muy buenas!!
+          
