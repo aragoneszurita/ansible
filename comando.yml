@@ -1,6 +1,6 @@
 ---
 - name: Ejecuciones comando - command - 
-  hosts: localhost
+  hosts: SERVIDORES
   gather_facts: false
   become: yes
 
